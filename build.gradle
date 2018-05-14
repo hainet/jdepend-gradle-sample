@@ -1,0 +1,23 @@
+group 'com.hainet'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'jdepend'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+tasks.withType(JDepend) {
+    reports {
+        xml.enabled false
+        text.enabled true
+    }
+}
